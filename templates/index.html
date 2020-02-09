@@ -46,7 +46,265 @@ Index
     <!-- banner -->
 
 
-  
+    <!-- products section -->
+<div class="container-fluid product_bg py-2">
+    <div  class="container">
+        <!-- products -->
+        <h2>New Product</h2>
+        <div class="row m-4">
+
+            {% if new_data %}
+            {% for product in new_data%}
+
+            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
+                <div class="card text-center my_card">
+                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
+                    <div>
+                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
+                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
+                        <hr>
+                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+            {% endif%}
+
+        </div>
+        <!-- products -->
+    </div>
+    <div  class="container">
+        <!-- products -->
+        <h2>Electronics</h2>
+        <div class="row m-4">
+
+            {% if electronics_data %}
+            {% for product in electronics_data%}
+
+            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
+                <div class="card text-center my_card">
+                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
+                    <div>
+                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
+                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
+                        <hr>
+                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+            {% endif%}
+
+        </div>
+        <!-- products -->
+    </div>
+    <div  class="container">
+        <!-- products -->
+        <h2>Mobiles</h2>
+        <div class="row m-4">
+
+            {% if mobile_data %}
+            {% for product in mobile_data%}
+
+            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
+                <div class="card text-center my_card">
+                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
+                    <div>
+                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
+                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
+                        <hr>
+                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+            {% endif%}
+
+        </div>
+        <!-- products -->
+    </div>
+    <div  class="container">
+        <!-- products -->
+        <h2>Home</h2>
+        <div class="row m-4">
+
+            {% if home_data %}
+            {% for product in home_data%}
+
+            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
+                <div class="card text-center my_card">
+                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
+                    <div>
+                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
+                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
+                        <hr>
+                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+            {% endif%}
+
+        </div>
+        <!-- products -->
+    </div>
+    <div  class="container">
+        <!-- products -->
+        <h2>Beauty and Health </h2>
+        <div class="row m-4">
+
+            {% if bh_data %}
+            {% for product in bh_data%}
+
+            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
+                <div class="card text-center my_card">
+                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
+                    <div>
+                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
+                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
+                        <hr>
+                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+            {% endif%}
+
+        </div>
+        <!-- products -->
+    </div>
+    <div  class="container">
+        <!-- products -->
+        <h2>Baby</h2>
+        <div class="row m-4">
+
+            {% if baby_data %}
+            {% for product in baby_data%}
+
+            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
+                <div class="card text-center my_card">
+                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
+                    <div>
+                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
+                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
+                        <hr>
+                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+            {% endif%}
+
+        </div>
+        <!-- products -->
+    </div>
+    <div  class="container">
+        <!-- products -->
+        {% if fashion_data %}
+        <h2>Fashion</h2>
+        <div class="row m-4">
+
+
+            {% for product in fashion_data%}
+
+            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
+                <div class="card text-center my_card">
+                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
+                    <div>
+                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
+                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
+                        <hr>
+                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+
+
+        </div>
+        {% endif%}
+        <!-- products -->
+    </div>
+    <div  class="container">
+        <!-- products -->
+        <h2>Market</h2>
+        <div class="row m-4">
+
+            {% if market_data %}
+            {% for product in market_data%}
+
+            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
+                <div class="card text-center my_card">
+                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
+                    <div>
+                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
+                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
+                        <hr>
+                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+            {% endif%}
+
+        </div>
+        <!-- products -->
+    </div>
+    <div  class="container">
+        <!-- products -->
+        <h2>Daily Deals</h2>
+        <div class="row m-4">
+
+            {% if deals_data %}
+            {% for product in deals_data%}
+
+            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
+                <div class="card text-center my_card">
+                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
+                    <div>
+                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
+                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
+                        <hr>
+                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+            {% endif%}
+
+        </div>
+        <!-- products -->
+    </div>
+
+
+</div>
 
     <!-- products -->
 
