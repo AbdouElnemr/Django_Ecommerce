@@ -2,14 +2,14 @@ from django.shortcuts import render,HttpResponseRedirect,reverse,get_object_or_4
 from .forms import user_form,profile_form,login_form
 from django.contrib.auth.models import User
 from .models import profile
-from django.contrib.auth import authenticate,login,logout 
+from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-
+from cart.models import cart
 # Create your views here.
 
 def register(request):
     print("fdg")
-    if request.method=='POST':  
+    if request.method=='POST':
         userform=user_form(request.POST)
         profileform=profile_form(request.POST)
         if userform.is_valid() and profileform.is_valid():
@@ -21,11 +21,15 @@ def register(request):
             password=userform.cleaned_data.get('password')
             phone_number=profileform.cleaned_data.get('phone_number')
             myuser=User.objects.create_user(username=username,first_name=first_name,last_name=last_name,email=email,password=password)
-            myprofile=profile.objects.create(user=myuser, phone_number= 'phone_number')
+            myprofile=profile.objects.create(user=myuser, phone_number= phone_number)
             image=request.FILES.get('image')
             myprofile.image=image
             myprofile.save()
             login(request,myuser)
+
+            new_cart = cart.objects.create(user =myuser )
+            new_cart.save()
+
             return HttpResponseRedirect(reverse("account:login"))
         else:
             print("not valid")
@@ -66,8 +70,23 @@ def user_profile(request,username):
     logged_user=request.user
     myuser=get_object_or_404(User,username=username)
     user_list=[]
-    print(myuser.email)
     return render(request,"profile.html", {'user_data':myuser})
 
+
+# def search_user(request,keyword):
+    # # keyword=request.GET.get('keyword')
+    # myusers=User.objects.filter(Q(username__icontains=keyword)|Q(first_name__icontains=keyword)|Q(last_name__icontains=keyword))
+    # all_followings=request.user.followings.all()
+    # mylist=[]
+    # mydict={}
+    # for following in all_followings:
+    #     mylist.append(following.myuser)
+    # for user in myusers:
+    #     if user in mylist:
+    #         mydict[user]=True
+    #     else:
+    #         mydict[user]=False
+    #
+    # return render(request,"search_user.html",{'myusers':myusers,'dict':mydict})
 
 
