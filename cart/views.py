@@ -62,10 +62,11 @@ def update_number(request, id):
     print(request.POST['number'])
     return HttpResponseRedirect(reverse('cart:display_cart'))
 
-
-def charge(request):
-    get_cart, created = cart.objects.get_or_create(user=request.user)
-    for item in get_cart:
-        request.user.profile.orders.add(item.myproduct)
-        request.user.profile.save()
-    return  render(request, 'charge.html')
+#
+# def charge(request):
+#     print('charge==========================')
+#     get_cart, created = cart.objects.get_or_create(user=request.user)
+#     for item in get_cart:
+#         request.user.profile.orders.add(item.myproduct)
+#         request.user.profile.save()
+#     return  render(request, 'charge.html')

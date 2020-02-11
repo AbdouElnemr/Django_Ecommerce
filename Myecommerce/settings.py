@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'payments',
     'cart',
     'account',
+    'orders',
+    'django.contrib.humanize',
 
  ]
 
@@ -133,8 +135,9 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
+# STRIPE_SECRET_KEY = 'sk_test_x9PR8AXrExPNLTfj2XDu0Uwo00waf1gKTy'
 STRIPE_SECRET_KEY = 'sk_test_x9PR8AXrExPNLTfj2XDu0Uwo00waf1gKTy'
-STRIPE_PUBLISHABLE_KEY = 'pk_test_6IW43CsIb0duPGHg1MgJBH1G006aj1pmu7'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_oUBwpwP3y25hbJbQhDJZYv3K00W6WF7sVs'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

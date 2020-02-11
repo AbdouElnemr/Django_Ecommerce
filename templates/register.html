@@ -16,7 +16,7 @@ Register
 <!--					<img src="{% static  'img/img-01.png' %}" alt="IMG">-->
 <!--				</div>-->
 
-				<form class="login100-form validate-form" method="post" action=".">
+				<form class="login100-form validate-form p-2" method="post" action=".">
 					            {% csrf_token %}
 					<span class="login100-form-title">
 						Member Register
@@ -82,7 +82,7 @@ Register
 						</span>
 					</div>
 
-                    <div class="wrap-input100 validate-input" data-validate = "Phone Number  is required">
+                    <div class="wrap-input100 validate-input " data-validate = "Phone Number  is required">
 <!--						<input class="input100" type="text" name="pass" placeholder="Phone Number">-->
 						{{profileform.errors.phone_number}}
 						{{profileform.phone_number}}

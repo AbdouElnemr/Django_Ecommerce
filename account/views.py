@@ -21,8 +21,9 @@ def register(request):
             password=userform.cleaned_data.get('password')
             phone_number=profileform.cleaned_data.get('phone_number')
             myuser=User.objects.create_user(username=username,first_name=first_name,last_name=last_name,email=email,password=password)
+            image = request.FILES.get('image')
             myprofile=profile.objects.create(user=myuser, phone_number= phone_number)
-            image=request.FILES.get('image')
+
             myprofile.image=image
             myprofile.save()
             login(request,myuser)

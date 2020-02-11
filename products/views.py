@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponseRedirect,reverse
 from .models import products
 from .models import CATEGORY_CHOISE
 from django.db.models import Q
+from .models import Comment
 
 def productHome(request):
     mobile_data = products.objects.filter(category='mobiles')
@@ -34,4 +35,13 @@ def search_product(request):
 def search_category(request,category):
     data = products.objects.filter(category=category)
     category_list = {"products": data}
-    return render(request, 'index.html', context=category_list)
+    return render(request, 'search.html', context=category_list)
+
+def comment_product(request,id):
+    print("hey-------")
+    text=request.POST['text']
+    print(text)
+    myproduct=products.objects.get(id=id)
+    new_comment=Comment.objects.create(text=text,product_comment=myproduct, user=request.user)
+    new_comment.save()
+    return HttpResponseRedirect(reverse("details",kwargs={'id':id}))

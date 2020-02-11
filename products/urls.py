@@ -6,4 +6,5 @@ urlpatterns = [
     path("<int:id>",views.details, name="details"),
     path("search",views.search_product,name='search'),
     path("<str:category>",views.search_category,name='category'),
+    path("comments/<int:id>/", views.comment_product, name="comment"),
  ]

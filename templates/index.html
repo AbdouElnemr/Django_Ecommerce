@@ -50,10 +50,11 @@ Index
 <div class="container-fluid product_bg py-2">
     <div  class="container">
         <!-- products -->
-        <h2>New Product</h2>
+        <h2   class="container-fluid text-light  bg-dark w-100 font_limit py-2 py-2">New Products</h2>
         <div class="row m-4">
 
-            {% if new_data %}
+        {% if new_data %}
+
             {% for product in new_data%}
 
             <div class="col-sm-12 col-md-6  col-lg-3 my-2">
@@ -70,43 +71,16 @@ Index
             </div>
             {% endfor %}
             {% else %}
-                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
-            {% endif%}
+                <h4>Sorry Not Available in Our Store now , We will bring it </h4>
+                    {% endif%}
 
         </div>
         <!-- products -->
     </div>
+
     <div  class="container">
         <!-- products -->
-        <h2>Electronics</h2>
-        <div class="row m-4">
-
-            {% if electronics_data %}
-            {% for product in electronics_data%}
-
-            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
-                <div class="card text-center my_card">
-                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
-                    <div>
-                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
-                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
-                        <hr>
-                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
-                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% else %}
-                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
-            {% endif%}
-
-        </div>
-        <!-- products -->
-    </div>
-    <div  class="container">
-        <!-- products -->
-        <h2>Mobiles</h2>
+        <h2 class="container-fluid text-light  bg-dark w-100 font_limit py-2">Mobiles</h2>
         <div class="row m-4">
 
             {% if mobile_data %}
@@ -126,15 +100,16 @@ Index
             </div>
             {% endfor %}
             {% else %}
-                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+                <h4>Sorry Not Available in Our Store now , We will bring it </h4>
             {% endif%}
 
         </div>
         <!-- products -->
     </div>
+
     <div  class="container">
         <!-- products -->
-        <h2>Home</h2>
+        <h2 class="container-fluid text-light  bg-dark w-100 font_limit py-2">Home</h2>
         <div class="row m-4">
 
             {% if home_data %}
@@ -154,7 +129,7 @@ Index
             </div>
             {% endfor %}
             {% else %}
-                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+                <h4>Sorry Not Available in Our Store now , We will bring it </h4>
             {% endif%}
 
         </div>
@@ -162,7 +137,37 @@ Index
     </div>
     <div  class="container">
         <!-- products -->
-        <h2>Beauty and Health </h2>
+
+        <h2  class="container-fluid text-light  bg-dark w-100 font_limit py-2">Electronics</h2>
+        <div class="row m-4">
+
+            {% if electronics_data %}
+            {% for product in electronics_data%}
+
+            <div class="col-sm-12 col-md-6  col-lg-3 my-2">
+                <div class="card text-center my_card">
+                    <img src="{{ product.image.url }}" class="card-img-top img-responsive" width=190 height=260></img>
+                    <div>
+                        <a class="card-title text-success my-4 font-weight-bold" href={{product.id}}>{{product.name}}</a>
+                        <p class="font-weight-bold my-4">{{ product.price }}$</p>
+                        <hr>
+                        <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 py-1 "><i class="material-icons">shopping_cart</i></a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center details_size">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+                <h4>Sorry Not Available in Our Store now , We will bring it </h4>
+        {% endif%}
+
+
+        </div>
+        <!-- products -->
+    </div>
+    <div  class="container">
+        <!-- products -->
+        <h2 class="container-fluid text-light  bg-dark w-100 font_limit py-2">Beauty and Health </h2>
         <div class="row m-4">
 
             {% if bh_data %}
@@ -182,7 +187,7 @@ Index
             </div>
             {% endfor %}
             {% else %}
-                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+                <h4>Sorry Not Available in Our Store now , We will bring it </h4>
             {% endif%}
 
         </div>
@@ -190,7 +195,7 @@ Index
     </div>
     <div  class="container">
         <!-- products -->
-        <h2>Baby</h2>
+        <h2 class="container-fluid text-light  bg-dark w-100 font_limit py-2">Baby</h2>
         <div class="row m-4">
 
             {% if baby_data %}
@@ -210,7 +215,7 @@ Index
             </div>
             {% endfor %}
             {% else %}
-                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+                <h4>Sorry Not Available in Our Store now , We will bring it </h4>
             {% endif%}
 
         </div>
@@ -219,7 +224,7 @@ Index
     <div  class="container">
         <!-- products -->
         {% if fashion_data %}
-        <h2>Fashion</h2>
+        <h2 class="container-fluid text-light  bg-dark w-100 font_limit py-2">Fashion</h2>
         <div class="row m-4">
 
 
@@ -239,7 +244,7 @@ Index
             </div>
             {% endfor %}
             {% else %}
-                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+                <h4>Sorry Not Available in Our Store now , We will bring it </h4>
 
 
         </div>
@@ -248,7 +253,7 @@ Index
     </div>
     <div  class="container">
         <!-- products -->
-        <h2>Market</h2>
+        <h2 class="container-fluid text-light  bg-dark w-100 font_limit py-2">Market</h2>
         <div class="row m-4">
 
             {% if market_data %}
@@ -268,7 +273,7 @@ Index
             </div>
             {% endfor %}
             {% else %}
-                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+                <h4>Sorry Not Available in Our Store now , We will bring it </h4>
             {% endif%}
 
         </div>
@@ -276,7 +281,7 @@ Index
     </div>
     <div  class="container">
         <!-- products -->
-        <h2>Daily Deals</h2>
+        <h2 class="container-fluid text-light  bg-dark w-100 font_limit py-2">Daily Deals</h2>
         <div class="row m-4">
 
             {% if deals_data %}
@@ -296,7 +301,7 @@ Index
             </div>
             {% endfor %}
             {% else %}
-                <h2>Sorry Not Available in Our Store now , We will bring it </h2>
+                <h4>Sorry Not Available in Our Store now , We will bring it </h4>
             {% endif%}
 
         </div>

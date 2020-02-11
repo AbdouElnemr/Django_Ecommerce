@@ -18,7 +18,9 @@
   width: 100px;
   height: 100px;
 }
-
+.font_limit{
+    font-size: 13pt;
+}
 header {
     padding-bottom: 2%;
 }

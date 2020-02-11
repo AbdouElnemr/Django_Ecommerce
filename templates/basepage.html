@@ -54,7 +54,7 @@
 
         {% else %}
 
-        <a class="btn col-sm-2  col-lg-1 egoreis " href="{% url 'account:login' %}"><img
+        <a class="btn col-sm-2  col-lg-1 egoreis " href="{% url 'account:profile'  request.user.username %}"><img
                 class="thumbnail circular_image"
                 width="40"
                 height="40"
@@ -164,11 +164,11 @@
         <div class="col-sm-12 col-md-6 col-lg-3 my-3">
             <ul class="text-light  text-center  align-items-center justify-content-center">
                 <li class="text-capitalize font-weight-bold pb-3"><a  class="text-light" href="{% url 'category' 'electronics' %}"> Electronics </a></li>
-                <li> <a class="text-light"  href="{% url 'search' %}?keyword=ledscreen" name="ledscreen"> Led Screen </a> </li>
-                <li> <a class="text-light"  href="{% url 'search' %}?keyword=aircondition" name="aircondion"> Air Contion </a> </li>
-                <li> <a class="text-light"  href="{% url 'search' %}?keyword=dishwasher" name="dishwasher"> DishWasher </a> </li>
-                <li> <a class="text-light"  href="{% url 'search' %}?keyword=fridge" name="fridge"> Fridge </a> </li>
-                <li> <a class="text-light"  href="{% url 'search' %}?keyword=tv" name="tv"> TV </a> </li>
+                <li> <a class="text-light"  href="{% url 'search' %}?keyword=tv"  > Led Screen </a> </li>
+                <li> <a class="text-light"  href="{% url 'search' %}?keyword=air condition"  > Air Contion </a> </li>
+                <li> <a class="text-light"  href="{% url 'search' %}?keyword=dishwasher"  > DishWasher </a> </li>
+                <li> <a class="text-light"  href="{% url 'search' %}?keyword=fridge"  > Fridge </a> </li>
+                <li> <a class="text-light"  href="{% url 'search' %}?keyword=tv" > TV </a> </li>
             </ul>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-3  my-3">

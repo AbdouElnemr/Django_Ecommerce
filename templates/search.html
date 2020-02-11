@@ -54,7 +54,7 @@ Search
 
              {% if products %}
             {% for product in products%}
-            <div class="col-sm-12 col-md-6 col-lg-4   my-2">
+            <div class="col-sm-12 col-md-6 col-lg-3   my-2">
                 <div class="card text-center my_card">
                     <img src="{{ product.image.url }}" class="card-img-top" width=80 height=200></img>
                     <div>
@@ -62,7 +62,7 @@ Search
                         <p class="font-weight-bold">{{ product.price }}$</p>
                         <hr>
                         <a href="{% url 'cart:add'  product.id %}" class="btn btn-success w-25 justify-content-center my-2 "><i class="material-icons">shopping_cart</i></a>
-                        <a href="{{product.id}}" class="btn btn-md btn-primary  w-25 my-2 py-2  justify-content-center">Details</a>
+                        <a href="{{product.id}}" class="btn btn-md btn-primary    my-2 py-2  justify-content-center">Details</a>
                     </div>
                 </div>
             </div>
@@ -74,7 +74,6 @@ Search
         </div>
         <!-- products -->
     </div>
-
 
     </div>
 </section>
